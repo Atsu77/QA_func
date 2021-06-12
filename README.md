@@ -1,24 +1,23 @@
-# README
+# このアプリをなぜ作ろうと思ったか
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- 問題を自分で作ることでより理解が深まる
+- 解答してもらえるのでモチベーションの増加につながる
 
-Things you may want to cover:
+# 企画名
 
-* Ruby version
+問題投稿アプリ
 
-* System dependencies
+# 内容
 
-* Configuration
+ユーザー同士で問題を出し合って,その回答を行う
 
-* Database creation
+# 機能要件
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ログイン機能
+- 問題投稿機能
+- 解答機能
+- いいね機能
+- いい問題を選んで自分で問題集を作れる
+- 投稿の検索機能
+- 問題のタグ付け
+- ユーザーの詳細ページに投稿一覧を表示
