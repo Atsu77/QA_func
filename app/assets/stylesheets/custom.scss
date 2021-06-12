@@ -1,3 +1,21 @@
 body {
   color: #505050;
 }
+
+.navbar {
+  height: 60px
+}
+.custom__body {
+  margin-top: 60px;
+}
+
+.notification {
+  color: #fff;
+  text-align: center;
+  .notice {
+    background-color: lightblue;
+  }
+  .alert {
+    background-color: orange;
+  }
+}
