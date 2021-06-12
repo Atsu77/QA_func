@@ -1,0 +1,16 @@
+.top {
+  min-height: 50vh;
+  background-color: #6C6C6C;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__title {
+    margin-top: 1em;
+  }
+  &__btn{
+    margin: 0 auto;
+  }
+}
+
