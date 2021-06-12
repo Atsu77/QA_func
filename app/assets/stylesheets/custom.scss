@@ -14,8 +14,10 @@ body {
   text-align: center;
   .notice {
     background-color: lightblue;
+    margin-bottom: 0;
   }
   .alert {
+    margin-bottom: 0;
     background-color: orange;
   }
 }

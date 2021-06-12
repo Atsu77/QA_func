@@ -1,0 +1,27 @@
+<div class="container login__body">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h1 class="text-center">
+            ログイン
+          </h1>
+          <%= form_with scope: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
+          <div class="form_content my-2">
+            <%= f.label :email, 'メールアドレス'%>
+            <%= f.text_field :email ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :password, 'パスワード'%>
+            <%= f.password_field :password ,class: 'w-100'%>
+          </div>
+
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, 'ログイン情報を保持する'%>
+          <%= f.submit 'ログイン' ,class: 'btn btn-primary w-100 submit_btn w-100 my-4'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
