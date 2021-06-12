@@ -1,0 +1,65 @@
+<div class="container login__body">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h1 class="text-center">
+            新規会員登録
+          </h1>
+          <%= form_with url: user_session_path ,method: :post ,local: true do |f|%>
+          <div class="form_content my-2">
+            <%= f.label :name, '名前'%>
+            <%= f.text_field :name ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :email, 'メールアドレス'%>
+            <%= f.text_field :email ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :password, 'パスワード'%>
+            <%= f.password_field :password ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :password_confirmation, 'パスワード確認'%>
+            <%= f.password_field :password_confirmation ,class: 'w-100'%>
+          </div>
+
+            <%= f.submit '登録' ,class: 'btn btn-primary w-100 submit_btn w-100 my-4'%>
+            <% end %<div class="container login__body">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h1 class="text-center">
+            新規会員登録
+          </h1>
+          <%= form_with url: user_session_path ,method: :post ,local: true do |f|%>
+          <div class="form_content my-2">
+            <%= f.label :name, '名前'%>
+            <%= f.text_field :name ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :email, 'メールアドレス'%>
+            <%= f.text_field :email ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :password, 'パスワード'%>
+            <%= f.password_field :password ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :password_confirmation, 'パスワード確認'%>
+            <%= f.password_field :password_confirmation ,class: 'w-100'%>
+          </div>
+
+            <%= f.submit '登録' ,class: 'btn btn-primary w-100 submit_btn w-100 my-4'%>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
