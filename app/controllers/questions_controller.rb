@@ -1,16 +1,16 @@
 class QuestionsController < ApplicationController
   
   def index
-    @tag_list = Tag.all
     @questions = Question.all
   end
 
   def new
-    @questions = Question.new
+    @tag_list = Tag.all
+    @questions = current_user.questions.new
   end
 
   def create
-    @question = current.questions.new(question_params)
+    @question = current_user.questions.new(question_params)
     tag_list = params[:question][:tag].split(nil)
     if @question.save
       @question.save_tag(tag_list)
