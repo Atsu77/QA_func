@@ -18,6 +18,6 @@ require('jquery')
 //= require bootstrap-sprockets
 
 $(function() {
-  setTimeout("$('.alert').fadeOut('slow')", 2000)
+  setTimeout("$('.notification').fadeOut('slow')", 2000)
 });
 
