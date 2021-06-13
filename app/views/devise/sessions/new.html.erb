@@ -20,6 +20,10 @@
           <%= f.label :remember_me, 'ログイン情報を保持する'%>
           <%= f.submit 'ログイン' ,class: 'btn btn-primary w-100 submit_btn w-100 my-4'%>
           <% end %>
+          <p class="devise-link text-center">
+            アカウントをお持ちでないですか？
+            <%= link_to "新規登録", new_user_registration_path %>
+          </p>
         </div>
       </div>
     </div>
