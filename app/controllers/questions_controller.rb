@@ -6,14 +6,14 @@ class QuestionsController < ApplicationController
 
   def new
     @tag_list = Tag.all
-    @questions = current_user.questions.new
+    @question = current_user.questions.new
   end
 
   def create
     @question = current_user.questions.new(question_params)
-    tag_list = params[:question][:tag].split(nil)
+    #tag_list = params[:question][:tag].split(nil)
     if @question.save
-      @question.save_tag(tag_list)
+      #@question.save_tag(tag_list)
       redirect_to root_path, notice: '投稿しました'
     else
       render :new, alert: '投稿に失敗しました'

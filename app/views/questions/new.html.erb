@@ -1,0 +1,33 @@
+<div class="container question">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title question__title">問題投稿</h5>
+          <hr class="question__border">
+          <div class="question__form">
+            <%= form_with(model: @question, url: questions_path, method: :post, local: true) do |f| %>
+            <div class="form_content my-2 question__form ">
+              <%= f.text_field :title, class: 'question__form-first', placeholder:'問題のタイトルを入力してください' %>
+            </div>
+            <div class="form_content my-2 question__form">
+              <%= f.text_area :body, class: 'question__form-body', placeholder:'内容をこちらに入力してください'%>
+            </div>
+            <div class="form_content my-2 question__form">
+              <%= f.text_area :answer, class: 'question__form-answer', placeholder:'解答をこちらに入力してください'%>
+            </div>
+            <p class="question__form-tag-title">カテゴリ選択</p>
+            <hr class="question__form-border">
+            <% @tag_list.each do |list| %>
+            <span>
+              <%= link_to list.tag_name, '#', class: 'question__form-tag btn btn-outline-secondary'%>
+            </span>
+            <% end %>
+            <%= f.submit '登録' ,class: 'btn btn-primary w-75 submit_btn my-4 question__button'%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

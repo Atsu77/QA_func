@@ -1,0 +1,45 @@
+//問題投稿フォームのスタイル
+.question {
+  min-height: 100vh;
+  &__title {
+    color: #a8a8a8;
+    font-size: 2rem;
+    margin-bottom: 0;
+    width: 75%;
+    margin: 0 auto;
+  }
+  &__border {
+    margin: 0;
+    width: 75%;
+    margin: 0 auto;
+  }
+  &__form {
+    text-align: center;
+    &-first {
+      border-radius: 10px;
+      margin: 0 0 0.1rem;
+      width: 75%;
+      height: 35px;
+    }
+    &-body {
+      border-radius: 10px;
+      margin: 0.1rem 0;
+      width: 75%;
+      height: 150px;
+    }
+    &-answer {
+      border-radius: 10px;
+      margin: 0.1rem 0;
+      width: 75%;
+      height: 75px;
+    }
+    &-tag-title {
+      margin: 0 auto;
+      width: 75%
+    }
+    &-border {
+      width: 75%;
+      margin: 0 auto 10px;
+    }
+  }
+}
