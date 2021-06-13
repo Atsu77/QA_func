@@ -16,12 +16,15 @@
             <div class="form_content my-2 question__form">
               <%= f.text_area :answer, class: 'question__form-answer', placeholder:'解答をこちらに入力してください'%>
             </div>
-            <p class="question__form-tag-title">カテゴリ選択</p>
+            <%= f.label :tag, 'カテゴリを選択', class: "question__form-tag-title"%>
             <hr class="question__form-border">
-            <% @tag_list.each do |list| %>
-            <span>
-              <%= link_to list.tag_name, '#', class: 'question__form-tag btn btn-outline-secondary'%>
-            </span>
+            <%= f.collection_radio_buttons(:tag_ids, Tag.all, :id, :tag_name) do |t| %>
+                <span class="mx-2">
+                <%= t.label do %>
+                <%= t.radio_button %>
+                <%= t.text %>
+                </span>
+              <% end %>
             <% end %>
             <%= f.submit '登録' ,class: 'btn btn-primary w-75 submit_btn my-4 question__button'%>
             <% end %>
