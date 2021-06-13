@@ -9,9 +9,9 @@
 require 'faker'
 
 User.create!(
-	name: 'admin_user', 	
-	email: 'kamnknon@gmail.com',
-	password: 'foobar'
+  name: 'admin_user',
+  email: 'kamnknon@gmail.com',
+  password: 'foobar'
 )
 
 50.times do
@@ -21,5 +21,13 @@ User.create!(
     name: sample_name,
     email: sample_email,
     password: 'foobar'
+  )
+end
+
+TAG_NAMES = %w[Ruby Python JavaScript]
+
+TAG_NAMES.each do |tag_name|
+  Tag.create!(
+    tag_name: tag_name.to_s
   )
 end
