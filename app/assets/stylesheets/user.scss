@@ -1,11 +1,11 @@
 /*ユーザー一覧ページのデザイン*/
-.user{
-  &__users{
-    margin-top: 3rem; 
-    &-item{
+.user {
+  &__users {
+    margin-top: 3rem;
+    &-item {
       list-style: none;
       margin-left: 1.5rem;
-      a{
+      a {
         text-decoration: none;
         color: #414141;
         margin-left: 1rem;
@@ -15,26 +15,73 @@
         }
       }
     }
-    &-paginate{
+    &-paginate {
       margin: 1.5rem 0 3rem;
-
     }
   }
 }
 
-/*ページネーション自体のデザイン*/
-.pagination>li>a {          
-  border: none;    
-  color: #696969;  
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {     
-  background: #93c9ff;    
-  border-radius: 15px;  
-}
-
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {        
-  border-radius: 15px; 
+/* ユーザ詳細一覧 */
+.user__show {
+  &-body {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  &-info {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &-name {
+      &-label {
+        font-weight: bold;
+      }
+      p {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    &-email {
+      p {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+    &-btn{
+      text-align: center;
+    }
+  }
+  &-question{
+    min-height: 50vh;
+    &-label{
+      text-align: center;
+    }
+    &-body{
+      border: 1px solid #414141;
+      border-radius: 10px;
+      height: 60px;
+      width: 60%;
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #414141;
+      text-decoration: none;
+      &:hover {
+        color: #414141;
+        opacity: 0.8;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin: 0 20px;
+      }
+      p {
+        margin: 1.5rem 1.2rem 0.2rem 0;
+      }
+    }
+    &-paginate{
+      text-align: center;
+    }
+  }
 }
