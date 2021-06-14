@@ -1,0 +1,40 @@
+/*ユーザー一覧ページのデザイン*/
+.user{
+  &__users{
+    margin-top: 3rem; 
+    &-item{
+      list-style: none;
+      margin-left: 1.5rem;
+      a{
+        text-decoration: none;
+        color: #414141;
+        margin-left: 1rem;
+        font-weight: bold;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    &-paginate{
+      margin: 1.5rem 0 3rem;
+
+    }
+  }
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border: none;    
+  color: #696969;  
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #93c9ff;    
+  border-radius: 15px;  
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 15px; 
+}
