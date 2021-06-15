@@ -31,3 +31,17 @@ TAG_NAMES.each do |tag_name|
     tag_name: tag_name.to_s
   )
 end
+
+User.all.each do |user|
+  (1..3).each do |i|
+       sample_title = Faker::Lorem.sentence
+       sample_body = Faker::Lorem.sentence
+       sample_answer = Faker::Lorem.sentence
+       user.questions.create!(
+         title: sample_title,
+         body: sample_body,
+         answer: sample_answer,
+         tag_ids: i.to_i
+       )
+     end
+end
