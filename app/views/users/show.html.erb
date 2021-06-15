@@ -38,7 +38,7 @@
         </h2>
         <div class="user__show-question-body-edit">
           <% if q.user == current_user%>
-          <%= link_to '編集する', edit_question_path, class: 'btn btn-outline-secondary' %>
+          <%= link_to '編集する', edit_question_path(q), class: 'btn btn-outline-secondary' %>
           <%= link_to '削除する', question_path(q.id), method: :delete, class: 'btn btn-outline-danger', data: {confirm: "削除しますか？"}%>
           <% end %>
           <p><%= q.created_at.strftime('%Y/%m/%d %H:%M:%S')%></p>
