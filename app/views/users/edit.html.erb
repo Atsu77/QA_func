@@ -1,0 +1,25 @@
+<div class="container login__body">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h1 class="text-center">
+            ユーザー情報を編集
+          </h1>
+
+          <%= form_with(model: @user, url: user_path, method: :patch, local: true) do |f| %>
+          <div class="form_content my-2">
+            <%= f.label :name, '名前'%>
+            <%= f.text_field :name ,class: 'w-100'%>
+          </div>
+          <div class="form_content my-2">
+            <%= f.label :email, 'メールアドレス'%>
+            <%= f.text_field :email ,class: 'w-100'%>
+          </div>
+          <%= f.submit '編集' ,class: 'btn btn-primary w-100 submit_btn w-100 my-4'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
