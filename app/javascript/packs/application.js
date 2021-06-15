@@ -20,12 +20,13 @@ require("jquery");
 
 //一定時間立つとフラッシュメッセージを隠す処理
 $(function () {
-  setTimeout("$('.notification').slideUp('slow')", 2000);
+  setTimeout("$('.notification').fadeOut('slow')", 2000);
 });
 
 //問題の答えをトグルダウンする
-$(document).on("turbolinks:load", function () {
+$(document).on('turbolinks:load', function () {
   $(".question__content-answer").on("click", () => {
     $(".question__content-answer-body").slideToggle();
-  });
+  })
 });
+
