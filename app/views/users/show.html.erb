@@ -1,11 +1,11 @@
 <div class="container user__show">
   <div class="row user__show-body">
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <div class="user__show-img">
         <%= gravatar_for @user, size: 500 %>
       </div>
     </div>
-    <div class="col-md-6 user__show-info card">
+    <div class="col-lg-6 user__show-info card">
       <div class="card-body">
         <div class="user__show-info-name">
           <h1 class="user__show--info-name-label">名前</h1>
@@ -26,20 +26,40 @@
     </div>
   </div>
   <hr>
-  <% unless @questions.nil? %>
+  <% if @questions.present? %>
   <div class="user__show-question">
     <h1 class="user__show-question-label my-5">投稿した問題一覧</h1>
     <% @questions.each do |q| %>
-    <%= link_to question_path(q) , class: 'user__show-question-body' do %>
-    <h2>
-      <%= q.title%>
-    </h2>
-    <p><%= q.created_at.strftime('%Y/%m/%d %H:%M:%S')%></p>
+    <div class="card w-75 my-2 mx-auto">
+      <div class="card-body user__show-question-body">
+        <%= link_to question_path(q) do %>
+        <h2>
+          <%= q.title%>
+        </h2>
+        <div class="user__show-question-body-edit">
+          <% if q.user == current_user%>
+          <%= link_to '編集する', edit_question_path, class: 'btn btn-outline-secondary' %>
+          <%= link_to '削除する', question_path(q.id), method: :delete, class: 'btn btn-outline-danger', data: {confirm: "削除しますか？"}%>
+          <% end %>
+          <p><%= q.created_at.strftime('%Y/%m/%d %H:%M:%S')%></p>
+        </div>
+      </div>
+    </div>
     <% end %>
     <% end %>
     <div class="d-flex justify-content-center my-5">
       <%= paginate @questions%>
     </div>
+
+  </div>
+  <% else %>
+
+  <div class="user__show-question">
+    <h1 class="user__show-question-label my-5">投稿がありません</h1>
+    <div class='text-center'>
+      <%= link_to '問題を投稿する', new_question_path, class: 'btn btn-primary'%>
+    </div>
   </div>
   <% end %>
+
 </div>

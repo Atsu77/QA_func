@@ -1,0 +1,36 @@
+<div class="container question">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mt-5">
+        <div class="card-body">
+          <h5 class="card-title question__title">問題投稿</h5>
+          <hr class="question__border">
+          <div class="question__form">
+            <%= form_with(model: @question, url: questions_path, method: :post, local: true) do |f| %>
+            <div class="form_content my-2 question__form ">
+              <%= f.text_field :title, class: 'question__form-first', placeholder:'問題のタイトルを入力してください' %>
+            </div>
+            <div class="form_content my-2 question__form">
+              <%= f.text_area :body, class: 'question__form-body', placeholder:'内容をこちらに入力してください'%>
+            </div>
+            <div class="form_content my-2 question__form">
+              <%= f.text_area :answer, class: 'question__form-answer', placeholder:'解答をこちらに入力してください'%>
+            </div>
+            <%= f.label :tag, 'カテゴリを選択', class: "question__form-tag-title"%>
+            <hr class="question__form-border">
+            <%= f.collection_radio_buttons(:tag_ids, Tag.all, :id, :tag_name) do |t| %>
+                <span class="mx-2">
+                <%= t.label do %>
+                <%= t.radio_button %>
+                <%= t.text %>
+                </span>
+              <% end %>
+            <% end %>
+            <%= f.submit '編集' ,class: 'btn btn-primary w-75 submit_btn my-4 question__button'%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
