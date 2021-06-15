@@ -35,11 +35,36 @@
     }
     &-tag-title {
       margin: 0 auto;
-      width: 75%
+      width: 75%;
     }
     &-border {
       width: 75%;
       margin: 0 auto 10px;
+    }
+  }
+}
+
+.question__show {
+  margin: 5rem auto;
+  &-body {
+    margin: 20px auto;
+    .card-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-name {
+      margin-left: 10px;
+      a {
+        text-decoration: none;
+        color: $main-color;
+      }
+    }
+    &-title {
+      font-size: 1.5rem;
+    }
+    &-time {
+      margin-top: auto;
     }
   }
 }

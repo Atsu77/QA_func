@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @questions = Question.all
+    @questions = Question.order(id: 'DESC').page(params[:page]).per(15)
   end
 
   def new
@@ -10,7 +12,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.build(question_params)
     if @question.save
-      redirect_to root_path, notice: '投稿しました'
+      redirect_to questions_path, notice: '投稿しました'
     else
       render :new, alert: '投稿に失敗しました'
     end
