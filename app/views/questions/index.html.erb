@@ -3,11 +3,27 @@
   <div class="card question__show-body w-75">
     <div class="card-body ">
       <span>
-        <%= link_to gravatar_for(q.user, size: 50), user_path(q.user) %>
-        <span class="question__show-body-name"><%= link_to q.user.name, user_path(q.user) %></span>
+        <div class="question__show-body-name">
+          <span class="text-center mb-1">
+            <%= link_to gravatar_for(q.user, size: 50), user_path(q.user) %>
+          </span>
+          <span>
+            <%= link_to q.user.name, user_path(q.user) %>
+          </span>
+        </div>
       </span>
       <span class="question__show-body-title"><%= q.title%></span>
-      <span class="question__show-body-time"><%= q.created_at.strftime('%Y/%m/%d %H:%M:%S')%></span>
+      <div class="question__show-body-time">
+        <% if q.tags.present? %>
+        <span>
+          タグ : 
+          <%= q.tags[0].tag_name%>
+        </span>
+        <% end %>
+        <span>
+          <%= q.created_at.strftime('%Y/%m/%d %H:%M:%S')%>
+        </span>
+      </div>
     </div>
   </div>
   <% end %>
