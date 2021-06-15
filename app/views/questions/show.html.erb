@@ -1,0 +1,33 @@
+<div class="container question">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mt-5">
+        <div class="card-body">
+          <div class="question__form">
+            <h2 class="question__content-name">タイトル</h2>
+            <hr>
+            <div class="form_content card my-2 question__form ">
+              <div class="card-body">
+                <%= @question.title%>
+              </div>
+            </div>
+            <h2 class="question__content-name">問題文</h2>
+            <hr>
+            <div class="form_content card my-2 question__form">
+              <div class="card-body">
+                <%= @question.body%>
+              </div>
+            </div>
+            <button class="btn btn-primary question__content-answer">答えを見る</button>
+            <div class="form_content card my-2 question__form question__content-answer-body">
+            <h2 class="question__content-name text-center">答え</h2>
+              <div class="card-body">
+                <%= @question.answer%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

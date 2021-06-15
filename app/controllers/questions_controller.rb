@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
     @questions = Question.order(id: 'DESC').page(params[:page]).per(15)
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   def new
     @question = current_user.questions.new
   end

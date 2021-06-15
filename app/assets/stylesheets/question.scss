@@ -1,3 +1,4 @@
+$main-color: #505050;
 //問題投稿フォームのスタイル
 .question {
   min-height: 100vh;
@@ -64,6 +65,13 @@
     }
     &-title {
       font-size: 1.5rem;
+      a {
+        text-decoration: none;
+        color: $main-color;
+        &:hover{
+          color: #000;
+        }
+      }
     }
     &-time {
       display: flex;
@@ -72,4 +80,22 @@
       margin-top: auto;
     }
   }
+}
+
+.question__content-name {
+  margin: 1.5rem 2rem 0 0;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-bottom: 0;
+}
+
+.question__content-answer {
+  margin: 1.5rem auto;
+  &-body {
+    display: none;
+  }
+}
+
+.question__content-name + hr {
+  margin: 0;
 }

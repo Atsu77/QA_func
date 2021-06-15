@@ -12,7 +12,9 @@
           </span>
         </div>
       </span>
-      <span class="question__show-body-title"><%= q.title%></span>
+      <span class="question__show-body-title">
+      <%=link_to q.title, question_path(q.id)%>
+      </span>
       <div class="question__show-body-time">
         <% if q.tags.present? %>
         <span>
@@ -27,5 +29,7 @@
     </div>
   </div>
   <% end %>
+  <div class="d-flex justify-content-center">
   <%= paginate @questions%>
+  </div>
 </div>
