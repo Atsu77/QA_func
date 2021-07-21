@@ -1,0 +1,29 @@
+version: "3"
+services:
+  rails:
+    build:
+      context: .
+      dockerfile: ./rails/Dockerfile
+    command: "bundle exec rails server -p 3000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    depends_on: 
+      - postgresql
+    ports:
+      - "33000:3000"
+    volumes:
+      - ./QA_FUNC:/app
+      - bundle_data:/usr/local/bundle
+  postgresql:
+    build:
+      context: .
+      dockerfile: ./db/Dockerfile
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - pg_data:/var/lib/postgreql/data
+    ports:
+      - "5432:5432"
+volumes:
+  bundle_data:
+  pg_data:
